@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta4</title>
+    <style>
+        body {
+            background-color: #f0f0e8;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Jogo de adivinhar o número </h1>
+    <p id="retorno"></p>
+
+    <script>
+        let numeroJogador1
+        let numeroJogador2
+        let contador = 1
+        const retorno = document.getElementById("retorno")
+
+        do {
+            numeroJogador1 = prompt("Jogador 1: Escolha um número de 1 a 10")
+        } while (isNaN(numeroJogador1) || !Number.isInteger(Number(numeroJogador1)) || (numeroJogador1 < 1 || numeroJogador1 > 10))
+
+        do {
+            numeroJogador2 = prompt("Jogador 2: Tente adivinhar o número escolhido pelo jogador 1")
+        } while (isNaN(numeroJogador1) || !Number.isInteger(Number(numeroJogador1)) || (numeroJogador1 < 1 || numeroJogador1 > 10))
+
+        while (numeroJogador1 != numeroJogador2) {
+            numeroJogador2 = prompt("Jogador 2: Tente novamente adivinhar o número escolhido pelo jogador 1")
+            if (isNaN(numeroJogador1) || !Number.isInteger(Number(numeroJogador1)) || (numeroJogador1 < 1 || numeroJogador1 > 10)) {
+                break
+            } else contador++
+        }
+
+        retorno.innerHTML = "Parabéns, você acertou." + "</br></br>" +
+            "O jogador 1 escolheu o numero: " + numeroJogador1 + "</br>" +
+            "O jogador 2 precisou de " + contador + " tentativas para acertar"
+    </script>
+</body>
+
+</html>

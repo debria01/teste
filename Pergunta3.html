@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta3</title>
+    <style>
+        body {
+            background-color: #f0f0e8;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Tabuada </h1>
+    <p id="retorno"></p>
+
+    <script>
+        let numero
+        let tabuada = 0
+        const retorno = document.getElementById("retorno")
+
+        do {
+            numero = prompt("Digite um número para saber a tabuada")
+        } while (isNaN(numero) && (!Number(numero)))
+
+        for (let mult = 1; mult <= 10; mult++) {
+            let tabuada = numero * mult
+            retorno.innerHTML += tabuada + "<br>"
+        }
+    </script>
+</body>
+
+</html>

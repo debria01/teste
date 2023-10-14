@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta2</title>
+    <style>
+        body {
+            background-color: #f0f0e8;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Números Pares de 1 a 100 </h1>
+    <p id="retorno"></p>
+
+    <script>
+        let numero = 1
+        let numeroMaximo = 100
+        const retorno = document.getElementById("retorno")
+
+        while (numero <= numeroMaximo) {
+            if (numero % 2 == 0) {
+                retorno.innerHTML += numero + "<br>"
+            }
+            numero++;
+        }
+    </script>
+</body>
+
+</html>
